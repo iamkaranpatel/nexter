@@ -1,0 +1,86 @@
+%heading{
+    font-family: $font-display;
+    font-weight: 400;
+    
+}
+
+.heading-1{
+    @extend %heading;
+    font-size: 2rem;
+    color: $color-grey-light-1;
+    line-height: 1.2;
+    text-transform: uppercase;
+}
+
+.heading-2{
+    @extend %heading;
+    font-size: 2rem;
+    font-style: italic;
+    text-transform: capitalize;
+    line-height: 1.2;
+    &--light{color: $color-grey-light-1;}
+    &--dark{color: $color-grey-dark-1;}
+}
+
+.heading-3{
+    @extend %heading;
+    font-size: 1rem;
+    color:$color-primary;
+    text-transform: uppercase;
+}
+.heading-4{
+    @extend %heading;
+    font-size: 1.1rem;
+    text-transform: capitalize;
+    &--light{color: $color-grey-light-1;}
+    &--dark{color: $color-grey-dark-1;}
+}
+
+.btn{
+    background-color: $color-primary;
+    // background-image: linear-gradient(120deg,$color-primary 0,$color-primary 50%,$color-primary-dark 50%);
+    color: white;
+    border: none;
+    border-radius: 1px;
+    font-family: $font-display;
+    font-size: 1rem;
+    text-transform: uppercase;
+    padding: .5rem 1.5rem;
+    cursor: pointer;
+    position: relative;
+    z-index: 10;
+    
+    &::after{
+        content: "";
+        height: 100%;
+        width: 100%;
+        clip-path: circle(0%);
+        position: absolute;
+        top: 0;
+        right: 0;
+        background-color: $color-primary-dark;
+        z-index: -1;
+        transition: all .5s;
+    }
+
+    &:hover::after{
+        clip-path: circle(100%);
+    }
+    
+}
+
+.mb-sm{
+    margin-bottom: 1.3rem;
+}
+
+.mb-md{
+    margin-bottom: 2.3rem;
+}
+
+.mb-lg{
+    margin-bottom: 3.8rem;
+}
+
+.mb-xlg{
+    margin-bottom: 5.8rem;
+}

@@ -1,0 +1,71 @@
+.header{
+    background-image: linear-gradient(rgba($color-secondary,.9), rgba($color-secondary,.9)), url("../img/hero.jpeg");
+    grid-column: full-start / col-end 6;
+    object-fit: cover;
+    background-size: cover;
+    background-position: center;
+
+    display: grid;
+    grid-template-rows:1fr min-content minmax(4rem,min-content) 1fr min-content 1fr;
+    grid-template-columns: minmax(min-content,max-content);
+    grid-row-gap: 1.2rem;
+    padding: 2rem 5rem;
+    
+    
+    justify-content: center;
+
+    @media only screen and (max-width:$bp-medium) {
+        grid-column: full-start / full-end;
+       
+    }
+
+    @media only screen and (max-width:$bp-small) {
+        padding: 1rem 2.5rem;
+       
+    }
+
+    &__logo{
+        height: 2rem;
+        justify-self: center;
+        
+    }
+
+    &__seenon-text{
+        display: grid;
+        grid-template-columns: 1fr max-content 1fr;
+        align-items: center;
+        grid-column-gap: 1.5rem;
+        
+        color: $color-grey-light-1;
+
+        &::before,
+        &::after{
+            content: "";
+            height: 1px;
+            display: block;
+            background-color: currentColor;
+        }
+    }
+
+    &__seenon-logos{
+
+        display: grid;
+        grid-template-columns: repeat(4,1fr);
+        justify-items: center;
+        align-items: center;
+
+        img{
+            min-height: 1.5rem;
+            max-width: 60%;
+            filter: brightness(70%);
+
+        }
+    }
+
+    &__btn{
+        align-self:start;
+        justify-self: start;
+        font-size: 1rem;
+        padding: 1rem;
+    }
+}
